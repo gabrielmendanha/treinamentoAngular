@@ -1,0 +1,31 @@
+<style>
+    /*.successMessage {*/
+        /*text-align: center;*/
+        /*background: limegreen;*/
+        /*padding: 2px;*/
+        /*margin: 2px;*/
+        /*border-radius: 3px;*/
+        /*width: 200px;*/
+    /*}*/
+
+    /*.failMessage {*/
+        /*background: red;*/
+    /*}*/
+</style>
+
+<form>
+    <md-input-container class="md-icon-float md-block">
+        <label>Quem deseja seguir?</label>
+        <textarea required ng-model="fc.nickname" md-maxlength="15" rows="1" md-select-on-focus></textarea>
+    </md-input-container>
+    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+        <md-button class="md-raised md-primary" ng-click="fc.followUser()">Seguir</md-button>
+        <!--<div id="success" class="successMessage">-->
+            <!--<p>Seguido com sucesso!</p>-->
+        <!--</div>-->
+        <!--<div id="fail" class="failMessage successMessage">-->
+            <!--<p>Tente novamente!</p>-->
+        <!--</div>-->
+    </section>
+
+</form>

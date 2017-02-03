@@ -1,0 +1,31 @@
+<style>
+
+    .fileUpload {
+        margin-bottom: 15px;
+        padding: 15px;
+    }
+
+    .md-primary {
+        margin-top: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .md-block {
+        padding: 15px;
+    }
+
+    form {
+        min-width: 500px;
+        max-width: 500px;
+    }
+</style>
+
+<form>
+    <lf-ng-md-file-input class="fileUpload" lf-files="files01" lf-api="api01" lf-maxcount="5"></lf-ng-md-file-input>
+    <md-input-container class="md-icon-float md-block">
+        <label>Descrição</label>
+        <textarea ng-model="fc.post.description" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+        <md-button class="md-raised md-primary" ng-click="fc.upload()">Upload</md-button>
+    </md-input-container>
+</form>

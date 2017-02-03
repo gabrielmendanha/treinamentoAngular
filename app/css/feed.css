@@ -1,0 +1,38 @@
+#feed{
+    height: auto;
+}
+
+#toolbar {
+    position: fixed;
+    width: 100%;
+}
+
+.post {
+    margin-top: 50px;
+}
+
+img {
+    display: block;
+    margin:auto;
+    width: 100%;
+}
+
+.postDescription {
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: justify;
+    font-size: 2vh;
+}
+
+.line-separator{
+    height: 2px;
+    background: transparent;
+    border-bottom: 1px solid #313030;
+}
+
+.md-whiteframe-4dp {
+    width: 60%;
+    margin: auto;
+    background-color: #fff9a0;
+
+}

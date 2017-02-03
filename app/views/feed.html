@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="./css/feed.css">
+
+<div ng-cloak>
+    <md-content  id="toolbar">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <md-button id="left" class="md-fab md-mini" aria-label="Profile" ng-click="fc.goProfile()">
+                    <md-tooltip md-direction="bottom">Perfil</md-tooltip>
+                    <md-icon md-svg-icon="./static/icons/ic_person_black_24px.svg"></md-icon>
+                </md-button>
+                <md-truncate style="position: absolute; left: 90px; right: 170px; top: 20px; bottom: 13px;">InstaJS</md-truncate>
+                <span flex></span>
+                <md-button class="md-fab md-mini" ng-click="fc.openFromLeft()" aria-label="Upload">
+                    <md-tooltip md-direction="bottom">Upload</md-tooltip>
+                    <md-icon md-svg-icon="./static/icons/ic_file_upload_black_24px.svg"></md-icon>
+                </md-button>
+                <md-button class="md-fab md-mini" ng-click="fc.openSearch()"   aria-label="Search">
+                    <md-tooltip md-direction="bottom">Procurar</md-tooltip>
+                    <md-icon md-svg-icon="./static/icons/ic_search_black_24px.svg"></md-icon>
+                </md-button>
+                <md-button id="right" class="md-fab md-mini" aria-label="LogOut">
+                    <md-tooltip md-direction="bottom">Log Out</md-tooltip>
+                    <md-icon md-svg-icon="./static/icons/logout-variant.svg" ng-click="fc.logOff()" style="fill: black"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+    </md-content>
+</div>
+
+<div id="feed" ng-init="fc.getFeed()">
+    <div class="md-whiteframe-4dp" layout="column" ng-cloak>
+        <div class="post"  ng-repeat="post in fc.items | orderBy:'-' track by $index">
+            <div class="postImage">
+                <img ng-src={{post.img}}>
+            </div>
+            <div class="postDescription">
+                <h3>{{post.poster_name}}</h3>
+                <p>{{post.description}}</p>
+            </div>
+            <div class="line-separator"></div>
+        </div>
+    </div>
+</div>
+

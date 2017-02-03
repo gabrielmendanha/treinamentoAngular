@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="./css/profile.css">
+
+<div ng-cloak>
+    <md-content>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <md-button class="md-fab md-mini" aria-label="Feed" ng-click="pc.goFeed()">
+                    <md-tooltip md-direction="bottom">Feed</md-tooltip>
+                    <md-icon md-svg-icon="./static/icons/ic_rss_feed_black_24px.svg"></md-icon>
+                </md-button>
+                <md-truncate style="position: absolute; left: 90px; right: 170px; top: 20px; bottom: 13px;">InstaJS</md-truncate>
+                <span flex></span>
+                <md-button class="md-fab md-mini" aria-label="LogOut">
+                    <md-tooltip md-direction="bottom">Log Out</md-tooltip>
+                    <md-icon md-svg-icon="./static/icons/logout-variant.svg" ng-controller="FeedController as fc" ng-click="fc.logOff()" style="fill: black"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+    </md-content>
+</div>
+
+<div flex ng-cloak ng-init="pc.getPosts()">
+    <div class="post" ng-repeat="image in pc.posts track by $index">
+        <img ng-src="{{image.img}}">
+    </div>
+</div>
